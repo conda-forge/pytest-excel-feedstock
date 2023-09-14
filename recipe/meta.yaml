@@ -1,5 +1,5 @@
 {% set name = "pytest-excel" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pytest-excel-{{ version }}.tar.gz
-  sha256: 80b93d9405d8d59e5471fa079d64f62f1c7ff268d4c970bbe59f77321782423f
+  sha256: aec2819291894791fcd39263e49da8afb814053b2109c45ce179242f4d0dd325
 
 build:
   noarch: python
