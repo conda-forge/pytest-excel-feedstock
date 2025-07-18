@@ -1,5 +1,6 @@
 {% set name = "pytest-excel" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +8,22 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: d7f54d24c25a2f6052305809d4e0d224434fbe7a139bd162e3326cba7105e72a
+  sha256: 28eb55a8c394030bd514c1e58a98a086f56413527456d847625eebc4e01bedab
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
   run:
+    - openpyxl
     - python >={{ python_min }}
-    - pytest >=3.6
+    - pytest
     - pandas
 
 test:
