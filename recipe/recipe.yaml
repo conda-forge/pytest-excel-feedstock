@@ -7,8 +7,8 @@ context:
   python_min: '3.11'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pytest_excel-${{ version }}.tar.gz
